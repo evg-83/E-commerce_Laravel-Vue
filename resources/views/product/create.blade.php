@@ -40,6 +40,10 @@
               cols="30" rows="10"></textarea>
           </div>
           <div class="form-group">
+            <input type="text" name="oldPrice" class="form-control"
+              placeholder="Old Price">
+          </div>
+          <div class="form-group">
             <input type="text" name="price" class="form-control"
               placeholder="Price">
           </div>

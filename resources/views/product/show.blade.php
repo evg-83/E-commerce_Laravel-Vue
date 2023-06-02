@@ -59,6 +59,10 @@
                     <td>{{ $product->content }}</td>
                   </tr>
                   <tr>
+                    <td>Old Price</td>
+                    <td>{{ $product->oldPrice }}</td>
+                  </tr>
+                  <tr>
                     <td>Price</td>
                     <td>{{ $product->price }}</td>
                   </tr>

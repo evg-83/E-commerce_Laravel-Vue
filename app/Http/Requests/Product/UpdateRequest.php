@@ -34,6 +34,7 @@ class UpdateRequest extends FormRequest
             'tags.*'        => 'nullable|integer|exists:tags,id',
             'colors'        => 'nullable|array',
             'colors.*'      => 'nullable|integer|exists:colors,id',
+            'oldPrice'      => 'required|integer',
         ];
     }
 }

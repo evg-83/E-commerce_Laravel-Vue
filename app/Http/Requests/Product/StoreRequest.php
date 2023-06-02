@@ -32,6 +32,7 @@ class StoreRequest extends FormRequest
             'category_id'   => 'nullable|integer',
             'tags'          => 'nullable|array',
             'colors'        => 'nullable|array',
+            'oldPrice'      => 'required|integer',
         ];
     }
 }

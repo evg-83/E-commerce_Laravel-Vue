@@ -42,6 +42,10 @@
               placeholder="Content" cols="30" rows="10">{{ $product->content }}</textarea>
           </div>
           <div class="form-group">
+            <input type="text" name="oldPrice" value="{{ $product->oldPrice }}"
+              class="form-control" placeholder="Old Price">
+          </div>
+          <div class="form-group">
             <input type="text" name="price" value="{{ $product->price }}"
               class="form-control" placeholder="Price">
           </div>
