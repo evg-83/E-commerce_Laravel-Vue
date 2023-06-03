@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\UpdateRequest;
 use App\Models\Category;
 use App\Models\Color;
+use App\Models\Group;
 use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
@@ -17,6 +18,8 @@ class UpdateController extends Controller
         $tags       = Tag::all();
         $colors     = Color::all();
         $categories = Category::all();
+        $groups     = Group::all();
+
         $data = $request->validated();
 
         if (array_key_exists('preview_image', $data)) {
@@ -43,6 +46,6 @@ class UpdateController extends Controller
             $product->colors()->sync( $colorsIds );
         }
 
-        return view('product.show', compact('product', 'categories', 'tags', 'colors'));
+        return view('product.show', compact('product', 'categories', 'tags', 'colors', 'groups'));
     }
 }

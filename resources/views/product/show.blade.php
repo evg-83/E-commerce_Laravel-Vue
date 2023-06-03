@@ -87,6 +87,16 @@
                     </td>
                   </tr>
                   <tr>
+                    <td>Group</td>
+                    <td>
+                      @foreach ($groups as $group)
+                        <div value="{{ $group->id }}">
+                          {{ $group->id == $product->group_id ? $group->title : '' }}
+                        </div>
+                      @endforeach
+                    </td>
+                  </tr>
+                  <tr>
                     <td>Tag</td>
                     <td>
                       @foreach ($tags as $tag)

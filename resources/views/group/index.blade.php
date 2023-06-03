@@ -6,12 +6,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Categories</h1>
+          <h1 class="m-0">Groups</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item active"><a href="{{ route('main.index') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Categories</li>
+            <li class="breadcrumb-item active">Groups</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -27,7 +27,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <a href="{{ route('category.create') }}"
+              <a href="{{ route('group.create') }}"
                 class="btn btn-primary">Add</a>
             </div>
 
@@ -40,10 +40,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($categories as $category)
+                  @foreach ($groups as $group)
                     <tr>
-                      <td>{{ $category->id }}</td>
-                      <td><a href="{{ route('category.show', $category->id) }}">{{ $category->title }}</a></td>
+                      <td>{{ $group->id }}</td>
+                      <td><a href="{{ route('group.show', $group->id) }}">{{ $group->title }}</a></td>
                     </tr>
                   @endforeach
                 </tbody>

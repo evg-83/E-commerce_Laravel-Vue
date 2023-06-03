@@ -30,6 +30,7 @@ class UpdateRequest extends FormRequest
             'count'         => 'required|integer',
             'is_published'  => 'nullable|boolean',
             'category_id'   => 'nullable|integer|exists:categories,id',
+            'group_id'      => 'nullable|integer|exists:groups,id',
             'tags'          => 'nullable|array',
             'tags.*'        => 'nullable|integer|exists:tags,id',
             'colors'        => 'nullable|array',

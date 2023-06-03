@@ -174,6 +174,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="{{ route('group.index') }}" class="nav-link">
+                <i class="nav-icon far fa-list-alt"></i>
+                <p>Groups</p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="{{ route('category.index') }}" class="nav-link">
                 <i class="nav-icon far fa-list-alt"></i>
                 <p>Categories</p>
