@@ -36,6 +36,9 @@ class UpdateRequest extends FormRequest
             'colors'        => 'nullable|array',
             'colors.*'      => 'nullable|integer|exists:colors,id',
             'oldPrice'      => 'required|integer',
+            'product_images' => 'nullable|array',
+            // 'product_images.*' => 'nullable|integer|exists:product_images,id',
+            // 'image_ids_for_delete' => 'nullable|array',
         ];
     }
 }

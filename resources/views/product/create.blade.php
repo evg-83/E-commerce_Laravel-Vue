@@ -64,8 +64,20 @@
                 <label class="custom-file-label" for="exampleInputFile">Choose
                   file</label>
               </div>
-              <div class="input-group-append">
-                <span class="input-group-text">Upload</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            {{-- <div class="w-50 mb-2">
+                <img src="{{ asset('storage/' . $product->productImages) }}"
+                  alt="productImages" class="w-50">
+              </div> --}}
+            <div class="input-group">
+              <div class="custom-file">
+                <input name="product_images[]" type="file"
+                  class="custom-file-input" id="input-file-now-custom-3" multiple>
+                <label class="custom-file-label" for="input-file-now-custom-3">Choose
+                  files</label>
               </div>
             </div>
           </div>

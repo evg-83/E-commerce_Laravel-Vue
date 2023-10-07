@@ -10,7 +10,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item active"><a href="{{ route('product.index') }}">Products</a></li>
+            <li class="breadcrumb-item active"><a
+                href="{{ route('product.index') }}">Products</a></li>
             <li class="breadcrumb-item active">Product</li>
           </ol>
         </div><!-- /.col -->
@@ -71,11 +72,21 @@
                     <td>{{ $product->count }}</td>
                   </tr>
                   <tr>
-                    <td>File image</td>
+                    <td>File Product</td>
                     <td><img
                         src="{{ asset('storage/' . $product->preview_image) }}"
                         alt="preview_image" class="w-25"></td>
                   </tr>
+                  {{-- <tr>
+                    <td>File Product Images</td>
+                    <td>
+                        @foreach ($productImage->file_path as $img)
+                        <img
+                        src="{{ asset('storage/images/' . $img->file_path) }}"
+                        alt="file_path" class="w-25">
+                        @endforeach
+                    </td>
+                  </tr> --}}
                   <tr>
                     <td>Category</td>
                     <td>

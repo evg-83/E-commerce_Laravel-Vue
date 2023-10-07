@@ -22,18 +22,19 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'         => 'required|string',
-            'description'   => 'required|string',
-            'content'       => 'required|string',
-            'preview_image' => 'required|file',
-            'price'         => 'required|integer',
-            'count'         => 'required|integer',
-            'is_published'  => 'nullable|boolean',
-            'category_id'   => 'nullable|integer',
-            'group_id'      => 'nullable|integer',
-            'tags'          => 'nullable|array',
-            'colors'        => 'nullable|array',
-            'oldPrice'      => 'required|integer',
+            'title'          => 'required|string',
+            'description'    => 'required|string',
+            'content'        => 'required|string',
+            'preview_image'  => 'required|file',
+            'price'          => 'required|integer',
+            'count'          => 'required|integer',
+            'is_published'   => 'nullable|boolean',
+            'category_id'    => 'nullable|integer',
+            'group_id'       => 'nullable|integer',
+            'tags'           => 'nullable|array',
+            'colors'         => 'nullable|array',
+            'oldPrice'       => 'required|integer',
+            'product_images' => 'nullable|array',
         ];
     }
 }

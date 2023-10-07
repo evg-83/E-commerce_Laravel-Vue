@@ -7,17 +7,19 @@ use App\Models\Category;
 use App\Models\Color;
 use App\Models\Group;
 use App\Models\Product;
+use App\Models\ProductImage;
 use App\Models\Tag;
 
 class ShowController extends Controller
 {
     public function __invoke(Product $product)
     {
-        $tags       = Tag::all();
-        $colors     = Color::all();
-        $categories = Category::all();
-        $groups     = Group::all();
+        $tags          = Tag::all();
+        $colors        = Color::all();
+        $categories    = Category::all();
+        $groups        = Group::all();
+        $productImages = ProductImage::all();
 
-        return view('product.show', compact('product', 'tags', 'colors', 'categories', 'groups'));
+        return view('product.show', compact('product', 'tags', 'colors', 'categories', 'groups', 'productImages'));
     }
 }

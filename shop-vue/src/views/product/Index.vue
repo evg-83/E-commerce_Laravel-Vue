@@ -424,36 +424,25 @@
                                   class="row justify-content-between align-items-center"
                                 >
                                   <div class="col-lg-6">
-                                    <div class="quick-view__left-content">
+                                    <div
+                                      class="quick-view__left-content"
+                                      v-if="
+                                        popupProduct.product_images.length > 2
+                                      "
+                                    >
                                       <div class="tabs">
                                         <div class="popup-product-thumb-box">
                                           <ul>
                                             <li
+                                              v-for="productImage in popupProduct.product_images"
+                                              :key="productImage"
                                               class="tab-nav popup-product-thumb"
                                             >
-                                              <a href="#tabb1">
+                                              <a
+                                                :href="`#tabb${productImage.id}`"
+                                              >
                                                 <img
-                                                  :src="popupProduct.image_url"
-                                                  alt=""
-                                                />
-                                              </a>
-                                            </li>
-                                            <li
-                                              class="tab-nav popup-product-thumb"
-                                            >
-                                              <a href="#tabb2">
-                                                <img
-                                                  src="src/assets/images/shop/products-v6-img6.jpg"
-                                                  alt=""
-                                                />
-                                              </a>
-                                            </li>
-                                            <li
-                                              class="tab-nav popup-product-thumb"
-                                            >
-                                              <a href="#tabb3">
-                                                <img
-                                                  src="src/assets/images/shop/products-v6-img7.jpg"
+                                                  :src="productImage.url"
                                                   alt=""
                                                 />
                                               </a>
@@ -464,40 +453,16 @@
                                           class="popup-product-main-image-box"
                                         >
                                           <div
-                                            id="tabb1"
+                                            v-for="productImage in popupProduct.product_images"
+                                            :key="productImage"
+                                            :id="`tabb${productImage.id}`"
                                             class="tab-item popup-product-image"
                                           >
                                             <div
                                               class="popup-product-single-image"
                                             >
                                               <img
-                                                :src="popupProduct.image_url"
-                                                alt=""
-                                              />
-                                            </div>
-                                          </div>
-                                          <div
-                                            id="tabb2"
-                                            class="tab-item popup-product-image"
-                                          >
-                                            <div
-                                              class="popup-product-single-image"
-                                            >
-                                              <img
-                                                src="src/assets/images/shop/products-v6-img6.jpg"
-                                                alt=""
-                                              />
-                                            </div>
-                                          </div>
-                                          <div
-                                            id="tabb3"
-                                            class="tab-item popup-product-image"
-                                          >
-                                            <div
-                                              class="popup-product-single-image"
-                                            >
-                                              <img
-                                                src="src/assets/images/shop/products-v6-img7.jpg"
+                                                :src="productImage.url"
                                                 alt=""
                                               />
                                             </div>
@@ -694,6 +659,7 @@ export default {
         .get(`http://127.0.0.1:8000/api/products/${id}`)
         .then((res) => {
           this.popupProduct = res.data.data;
+          console.log(res);
         })
         .finally((v) => {
           $(document).trigger("change");
